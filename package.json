@@ -1,0 +1,26 @@
+{
+  "name": "openclaw-notion-plugin",
+  "version": "1.0.0",
+  "description": "Notion integration plugin for OpenClaw",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openclaw",
+    "notion",
+    "plugin"
+  ],
+  "author": "Developer",
+  "license": "MIT",
+  "dependencies": {
+    "openclaw-sdk": "^1.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.7"
+  }
+}

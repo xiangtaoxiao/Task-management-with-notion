@@ -1,0 +1,77 @@
+{
+  "id": "notion-integration",
+  "name": "Notion Integration",
+  "version": "1.0.0",
+  "description": "Integrates OpenClaw with Notion for task management and automation",
+  "author": "Developer",
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "openclaw-sdk": "^1.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "features": [
+    {
+      "id": "notion-init",
+      "name": "Notion Initialization",
+      "description": "Initialize Notion connection and create database",
+      "parameters": [
+        {
+          "name": "api_key",
+          "type": "string",
+          "required": true,
+          "description": "Notion API key"
+        }
+      ]
+    },
+    {
+      "id": "task-manager",
+      "name": "Task Manager",
+      "description": "Manage tasks in Notion database",
+      "parameters": [
+        {
+          "name": "action",
+          "type": "string",
+          "required": true,
+          "description": "Action to perform (create, update, delete)"
+        },
+        {
+          "name": "task_data",
+          "type": "object",
+          "required": true,
+          "description": "Task data"
+        }
+      ]
+    },
+    {
+      "id": "task-query",
+      "name": "Task Query",
+      "description": "Query tasks from Notion database",
+      "parameters": [
+        {
+          "name": "filter",
+          "type": "object",
+          "required": false,
+          "description": "Filter conditions"
+        },
+        {
+          "name": "sort",
+          "type": "object",
+          "required": false,
+          "description": "Sort conditions"
+        }
+      ]
+    }
+  ],
+  "python": {
+    "scripts": [
+      "scripts/notion_client.py",
+      "scripts/clipper.py"
+    ],
+    "requirements": "scripts/requirements.txt"
+  }
+}
