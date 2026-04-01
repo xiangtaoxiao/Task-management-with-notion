@@ -1,0 +1,33 @@
+# Notion Plugin Configuration
+
+# Notion API settings
+notion:
+  api_key: ""
+  database_id: ""
+  database_name: "To Do List 任务看板"
+
+# Scheduler settings
+scheduler:
+  enabled: true
+  cron_jobs:
+    - name: "morning_reminder"
+      cron: "0 9 * * *"  # 09:00 every day
+    - name: "afternoon_reminder"
+      cron: "0 14 * * *"  # 14:00 every day
+    - name: "evening_reminder"
+      cron: "0 20 * * *"  # 20:00 every day
+
+# Storage settings
+storage:
+  type: "local"  # local, redis, etc.
+  path: "./storage"
+
+# Notification settings
+notification:
+  enabled: true
+  channels:
+    - type: "console"
+      enabled: true
+    - type: "webhook"
+      enabled: false
+      url: ""
